@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bacae1xcfk68m"]
+
+[ext_resource type="Script" path="res://Hero.gd" id="1_njhjc"]
+[ext_resource type="Texture2D" uid="uid://c5po1tx0ojtnx" path="res://icon.svg" id="2_ilrhw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hedhb"]
+
+[node name="Level 1" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(960, 540)
+script = ExtResource("1_njhjc")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_hedhb")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_ilrhw")
