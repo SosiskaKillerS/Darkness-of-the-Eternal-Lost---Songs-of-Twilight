@@ -1,8 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://iuhqsyiwmckv"]
 
 [ext_resource type="Script" path="res://Hero.gd" id="1_njhjc"]
-[ext_resource type="Texture2D" uid="uid://dcl2iwxe3haxc" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/Charecters_sprites/main hero sprite/MH_SPRITE_SHEET.png" id="2_gdc3l"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sa87k"]
 size = Vector2(110, 124)
 
