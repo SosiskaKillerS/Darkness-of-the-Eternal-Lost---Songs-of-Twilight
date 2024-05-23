@@ -114,7 +114,7 @@ _data = {
 "walkup": SubResource("Animation_kyo6s")
 }
 
-[node name="Level 1" type="Node2D"]
+[node name="Game" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(960, 540)

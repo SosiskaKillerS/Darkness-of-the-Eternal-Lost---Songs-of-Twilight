@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgtvq0p4o7ue3"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_hie68"]
+[ext_resource type="Texture2D" uid="uid://c4ymfkowc0hn5" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/UI - design/Main_Menu_pic.png" id="2_5dlmf"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hie68")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5dlmf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 30.0
+offset_top = 27.0
+offset_right = 730.0
+offset_bottom = 198.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+
+[node name="Continue Game" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Continue Game"
+
+[node name="New Game" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "New Game"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Options
+"
+
+[node name="Authors" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Authors"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Continue Game" to="." method="_on_continue_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Authors" to="." method="_on_authors_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

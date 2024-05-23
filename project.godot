@@ -12,14 +12,17 @@ config_version=5
 
 config/name="Darkness of the Eternal Lost - Songs of Twilight"
 config/version="1"
-run/main_scene="res://level_1.tscn"
+run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+mouse_cursor/custom_image="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/UI - design/cursor.png"
+mouse_cursor/custom_image_hotspot=Vector2(3, 32)
 
 [input]
 
