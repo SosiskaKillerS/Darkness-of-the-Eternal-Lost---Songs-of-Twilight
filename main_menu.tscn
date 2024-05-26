@@ -1,7 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgtvq0p4o7ue3"]
+[gd_scene load_steps=11 format=3 uid="uid://b70h3i5hclnto"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_hie68"]
 [ext_resource type="Texture2D" uid="uid://c4ymfkowc0hn5" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/UI - design/Main_Menu_pic.png" id="2_5dlmf"]
+[ext_resource type="FontFile" uid="uid://b3s02uj8pnwx4" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/UI - design/Jacquard12-Regular.ttf" id="3_co85w"]
+
+[sub_resource type="SystemFont" id="SystemFont_hoaf3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bkbka"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exafy"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p5cdc"]
+bg_color = Color(0.363963, 0.699181, 0, 0)
+border_width_bottom = 5
+border_color = Color(0.74558, 0.74558, 0.74558, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.960784, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ao5r1"]
+bg_color = Color(0.0823529, 0.0901961, 0.0980392, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5i5bh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_hhy3n"]
+Button/font_sizes/font_size = 31
+Button/fonts/font = SubResource("SystemFont_hoaf3")
+Button/styles/disabled = SubResource("StyleBoxFlat_bkbka")
+Button/styles/focus = SubResource("StyleBoxFlat_exafy")
+Button/styles/hover = SubResource("StyleBoxFlat_p5cdc")
+Button/styles/normal = SubResource("StyleBoxFlat_ao5r1")
+Button/styles/pressed = SubResource("StyleBoxFlat_5i5bh")
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -23,51 +60,68 @@ texture = ExtResource("2_5dlmf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 30.0
-offset_top = 27.0
-offset_right = 730.0
-offset_bottom = 198.0
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -78.0
+offset_right = 680.0
+offset_bottom = -78.0
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 
 [node name="Continue Game" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 50)
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
+theme = SubResource("Theme_hhy3n")
+theme_override_fonts/font = ExtResource("3_co85w")
+theme_override_font_sizes/font_size = 72
 text = "Continue Game"
+alignment = 0
 
 [node name="New Game" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 50)
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 0
+theme = SubResource("Theme_hhy3n")
+theme_override_fonts/font = ExtResource("3_co85w")
+theme_override_font_sizes/font_size = 72
 text = "New Game"
+alignment = 0
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 50)
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 0
+theme = SubResource("Theme_hhy3n")
+theme_override_fonts/font = ExtResource("3_co85w")
+theme_override_font_sizes/font_size = 72
 text = "Options
 "
+alignment = 0
 
 [node name="Authors" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 50)
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 0
+theme = SubResource("Theme_hhy3n")
+theme_override_fonts/font = ExtResource("3_co85w")
+theme_override_font_sizes/font_size = 72
 text = "Authors"
+alignment = 0
 
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(300, 50)
+custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 0
+theme = SubResource("Theme_hhy3n")
+theme_override_fonts/font = ExtResource("3_co85w")
+theme_override_font_sizes/font_size = 72
 text = "Quit"
+alignment = 0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Continue Game" to="." method="_on_continue_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/New Game" to="." method="_on_new_game_pressed"]
