@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyd7ydjpok2fk"]
+[gd_scene load_steps=3 format=3 uid="uid://b81nctgd748c5"]
 
 [ext_resource type="Script" path="res://Options.gd" id="1_e756c"]
 [ext_resource type="Texture2D" uid="uid://c4ymfkowc0hn5" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/UI - design/Main_Menu_pic.png" id="2_6hqg1"]

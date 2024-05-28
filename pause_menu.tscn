@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1mpf15v1i3k"]
+
+[ext_resource type="Texture2D" uid="uid://ctxmjcmkt8rj6" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/UI - design/Pause Menu.png" id="1_uygsr"]
+[ext_resource type="FontFile" uid="uid://b3s02uj8pnwx4" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/UI - design/Jacquard12-Regular.ttf" id="2_lkplf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2q745"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mxx7j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4g6ov"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qssjg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rcqm0"]
+
+[node name="Pause Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_uygsr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 728.0
+offset_top = 351.0
+offset_right = 1181.0
+offset_bottom = 914.0
+
+[node name="Resume" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 185)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.568627, 0.505882, 0.317647, 1)
+theme_override_colors/font_pressed_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/font_hover_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/font_focus_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/font_disabled_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/font_outline_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/icon_normal_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/icon_pressed_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/icon_hover_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/icon_focus_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/icon_disabled_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_fonts/font = ExtResource("2_lkplf")
+theme_override_font_sizes/font_size = 146
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2q745")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mxx7j")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4g6ov")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qssjg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rcqm0")
+text = "Resume"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 185)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.568627, 0.505882, 0.317647, 1)
+theme_override_colors/font_pressed_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/font_hover_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/font_focus_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/font_disabled_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/font_outline_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/icon_normal_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/icon_pressed_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/icon_hover_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/icon_focus_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_colors/icon_disabled_color = Color(0.458824, 0.360784, 0.282353, 1)
+theme_override_fonts/font = ExtResource("2_lkplf")
+theme_override_font_sizes/font_size = 146
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2q745")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_mxx7j")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_4g6ov")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qssjg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rcqm0")
+text = "Exit"

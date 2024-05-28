@@ -78,7 +78,7 @@ custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 theme = SubResource("Theme_hhy3n")
 theme_override_fonts/font = ExtResource("3_co85w")
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 83
 text = "Continue Game"
 alignment = 0
 
@@ -88,7 +88,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 theme = SubResource("Theme_hhy3n")
 theme_override_fonts/font = ExtResource("3_co85w")
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 83
 text = "New Game"
 alignment = 0
 
@@ -98,7 +98,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 theme = SubResource("Theme_hhy3n")
 theme_override_fonts/font = ExtResource("3_co85w")
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 83
 text = "Options
 "
 alignment = 0
@@ -109,7 +109,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 theme = SubResource("Theme_hhy3n")
 theme_override_fonts/font = ExtResource("3_co85w")
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 83
 text = "Authors"
 alignment = 0
 
@@ -119,7 +119,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 theme = SubResource("Theme_hhy3n")
 theme_override_fonts/font = ExtResource("3_co85w")
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 83
 text = "Quit"
 alignment = 0
 

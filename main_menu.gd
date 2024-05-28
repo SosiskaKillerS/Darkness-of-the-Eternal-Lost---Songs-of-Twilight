@@ -10,7 +10,7 @@ func _on_new_game_pressed():
 
 
 func _on_options_pressed():
-	get_tree().change_scene_to_file("res://Options.tscn")
+	pass
 
 
 func _on_authors_pressed():

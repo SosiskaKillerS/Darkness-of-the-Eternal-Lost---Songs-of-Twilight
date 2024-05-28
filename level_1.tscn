@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://iuhqsyiwmckv"]
+[gd_scene load_steps=13 format=3 uid="uid://iuhqsyiwmckv"]
 
+[ext_resource type="Script" path="res://Manager.gd" id="1_3dgai"]
 [ext_resource type="Script" path="res://Hero.gd" id="1_njhjc"]
 [ext_resource type="Texture2D" uid="uid://dcl2iwxe3haxc" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/Charecters_sprites/main hero sprite/MH_SPRITE_SHEET.png" id="2_gdc3l"]
+[ext_resource type="PackedScene" uid="uid://d1mpf15v1i3k" path="res://pause_menu.tscn" id="3_f8ybr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sa87k"]
 size = Vector2(110, 124)
@@ -114,7 +116,13 @@ _data = {
 "walkup": SubResource("Animation_kyo6s")
 }
 
+[sub_resource type="TileSet" id="TileSet_7n1vj"]
+
 [node name="Game" type="Node2D"]
+
+[node name="Manager" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("1_3dgai")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(960, 540)
@@ -134,3 +142,19 @@ frame = 3
 libraries = {
 "": SubResource("AnimationLibrary_ijumb")
 }
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("3_f8ybr")]
+process_mode = 2
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_7n1vj")
+format = 2
+
+[connection signal="pressed" from="CanvasLayer/Pause Menu/VBoxContainer/Resume" to="Manager" method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/Pause Menu/VBoxContainer/Exit" to="Manager" method="_on_exit_pressed"]
+
+[editable path="CanvasLayer/Pause Menu"]
