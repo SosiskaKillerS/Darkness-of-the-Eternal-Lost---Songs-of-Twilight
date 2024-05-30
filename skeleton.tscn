@@ -19,6 +19,8 @@ scale = Vector2(8, 8)
 shape = SubResource("CapsuleShape2D_8t6k6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
 scale = Vector2(8, 8)
 texture = ExtResource("1_33vug")
 
@@ -27,4 +29,6 @@ texture = ExtResource("1_33vug")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AgrZone"]
 shape = SubResource("CircleShape2D_ixfnu")
 
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
 [connection signal="body_entered" from="AgrZone" to="." method="_on_agr_zone_body_entered"]
+[connection signal="body_shape_exited" from="AgrZone" to="." method="_on_agr_zone_body_shape_exited"]
