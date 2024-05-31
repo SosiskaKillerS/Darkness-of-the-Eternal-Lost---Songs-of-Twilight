@@ -1,0 +1,278 @@
+[gd_scene load_steps=11 format=3 uid="uid://doblt33kecvyu"]
+
+[ext_resource type="FontFile" uid="uid://b3s02uj8pnwx4" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/UI - design/Jacquard12-Regular.ttf" id="1_3fn5f"]
+[ext_resource type="Texture2D" uid="uid://rq7m6234ndyn" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/Charecters_sprites/Skeletons/skeleton_battle_sprite.png" id="1_w0gnh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoxwv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_swvry"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n8ivk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j31ru"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqe4i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ag2jl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cj7ut"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oq4tt"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[node name="SkeletonBattle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="SkeletonContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -325.0
+offset_right = 250.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="SkeletonContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_3fn5f")
+theme_override_font_sizes/font_size = 114
+theme_override_styles/background = SubResource("StyleBoxEmpty_hoxwv")
+theme_override_styles/fill = SubResource("StyleBoxEmpty_swvry")
+show_percentage = false
+
+[node name="Label" type="Label" parent="SkeletonContainer/ProgressBar"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -171.5
+offset_top = -137.0
+offset_right = 171.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_3fn5f")
+theme_override_font_sizes/font_size = 104
+text = "Health: 0/4"
+horizontal_alignment = 1
+
+[node name="Skeleton" type="TextureRect" parent="SkeletonContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_w0gnh")
+
+[node name="PlayerPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 878.0
+offset_right = 1922.0
+offset_bottom = 1078.0
+
+[node name="PlayerData" type="HBoxContainer" parent="PlayerPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PlayerPanel/PlayerData"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_3fn5f")
+theme_override_font_sizes/font_size = 105
+text = "Player"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="PlayerPanel/PlayerData"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_3fn5f")
+theme_override_font_sizes/font_size = 114
+theme_override_styles/background = SubResource("StyleBoxEmpty_hoxwv")
+theme_override_styles/fill = SubResource("StyleBoxEmpty_swvry")
+show_percentage = false
+
+[node name="Label" type="Label" parent="PlayerPanel/PlayerData/ProgressBar"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -52.5
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_3fn5f")
+theme_override_font_sizes/font_size = 104
+text = "Health: 0/4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActionPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1920, 200)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -385.0
+offset_right = 2.0
+offset_bottom = -185.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ActionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FightButton" type="Button" parent="ActionPanel/HBoxContainer"]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/font_hover_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/font_focus_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/font_disabled_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/font_outline_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_normal_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_pressed_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_hover_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_focus_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_disabled_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_fonts/font = ExtResource("1_3fn5f")
+theme_override_font_sizes/font_size = 104
+theme_override_styles/normal = SubResource("StyleBoxFlat_n8ivk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j31ru")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aqe4i")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ag2jl")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cj7ut")
+text = "Fight"
+
+[node name="BlockButton" type="Button" parent="ActionPanel/HBoxContainer"]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/font_hover_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/font_focus_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/font_disabled_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/font_outline_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_normal_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_pressed_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_hover_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_focus_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_disabled_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_fonts/font = ExtResource("1_3fn5f")
+theme_override_font_sizes/font_size = 104
+theme_override_styles/normal = SubResource("StyleBoxFlat_n8ivk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j31ru")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aqe4i")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ag2jl")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cj7ut")
+text = "Block"
+
+[node name="RunButton" type="Button" parent="ActionPanel/HBoxContainer"]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/font_hover_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/font_focus_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/font_disabled_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/font_outline_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_normal_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_pressed_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_hover_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_focus_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_colors/icon_disabled_color = Color(0.262745, 0.278431, 0.313726, 1)
+theme_override_fonts/font = ExtResource("1_3fn5f")
+theme_override_font_sizes/font_size = 104
+theme_override_styles/normal = SubResource("StyleBoxFlat_n8ivk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j31ru")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aqe4i")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ag2jl")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cj7ut")
+text = "Run"
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(1000, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -100.0
+offset_right = 500.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oq4tt")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -475.5
+offset_top = -50.5
+offset_right = 475.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_3fn5f")
+theme_override_font_sizes/font_size = 101
+text = "It looked better from afar"
