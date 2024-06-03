@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://iuhqsyiwmckv"]
+[gd_scene load_steps=21 format=3 uid="uid://iuhqsyiwmckv"]
 
 [ext_resource type="Texture2D" uid="uid://c6tftursickj1" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/TileMap/ground.png" id="1_ne417"]
 [ext_resource type="Script" path="res://Manager.gd" id="2_en0by"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://7dpx03h8y00f" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/TileMap/Subjects.png" id="5_e3yub"]
 [ext_resource type="PackedScene" uid="uid://d1mpf15v1i3k" path="res://pause_menu.tscn" id="6_6531j"]
 [ext_resource type="Texture2D" uid="uid://ldsyqpfiq7v5" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/TileMap/Graves_objects.png" id="7_peef4"]
-[ext_resource type="PackedScene" uid="uid://dchwl4rqlubaa" path="res://skeleton.tscn" id="8_wh223"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_56gmd"]
 texture = ExtResource("1_ne417")
@@ -529,9 +528,6 @@ layer_0/tile_data = PackedInt32Array(262152, 196608, 2, 262151, 131072, 2, 20316
 
 [node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("6_6531j")]
 process_mode = 2
-
-[node name="Skeleton" parent="." instance=ExtResource("8_wh223")]
-position = Vector2(931, -1662)
 
 [connection signal="pressed" from="CanvasLayer/Pause Menu/VBoxContainer/Resume" to="Manager" method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause Menu/VBoxContainer/Exit" to="Manager" method="_on_exit_pressed"]
