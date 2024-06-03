@@ -1,60 +1,82 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi5qcxvp4lxpr"]
+[gd_scene load_steps=10 format=3 uid="uid://bi5qcxvp4lxpr"]
 
-[ext_resource type="Script" path="res://Options.gd" id="1_k5bf8"]
-[ext_resource type="Texture2D" uid="uid://c4ymfkowc0hn5" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/UI - design/Main_Menu_pic.png" id="2_d7dm2"]
+[ext_resource type="Texture2D" uid="uid://c4ymfkowc0hn5" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/UI - design/Main_Menu_pic.png" id="1_3ku1c"]
+[ext_resource type="FontFile" uid="uid://b3s02uj8pnwx4" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/UI - design/Jacquard12-Regular.ttf" id="2_mvv3t"]
+[ext_resource type="Script" path="res://Button.gd" id="3_3a0cf"]
 
-[node name="Options" type="Control"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8m1hc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okuf2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jiu28"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lry5u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bymrj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ql4nv"]
+
+[node name="Authors" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_k5bf8")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_d7dm2")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_3ku1c")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -85.5
-offset_right = 250.0
-offset_bottom = 85.5
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8m1hc")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-texture_filter = 1
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -753.5
+offset_top = -76.5
+offset_right = 753.5
+offset_bottom = 76.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_mvv3t")
+theme_override_font_sizes/font_size = 74
+text = "Authors: SosiskaKillerS, dmntrx, aleksandraashevchuk
+Apps: GoDot ver.4, Aseprite, Fl studio 21"
 
-[node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Volume"
-
-[node name="Video" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Video"
-
-[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "Back
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+offset_left = -460.0
+offset_right = -303.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("2_mvv3t")
+theme_override_font_sizes/font_size = 72
+theme_override_styles/normal = SubResource("StyleBoxEmpty_okuf2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jiu28")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lry5u")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bymrj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ql4nv")
+text = "< Exit
 "
+script = ExtResource("3_3a0cf")
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_continue_game_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Video" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Panel/Button" to="Panel/Button" method="_on_pressed"]

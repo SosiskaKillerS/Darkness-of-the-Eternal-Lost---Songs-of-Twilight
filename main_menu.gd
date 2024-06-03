@@ -14,7 +14,7 @@ func _on_options_pressed():
 
 
 func _on_authors_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://authors.tscn")
 
 
 func _on_quit_pressed():

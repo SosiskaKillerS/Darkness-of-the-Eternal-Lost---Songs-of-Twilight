@@ -1,14 +1,13 @@
 extends CharacterBody2D
+var chase = false 
 
-var chase = false
-var player = null 
 
 func _on_agr_zone_body_entered(body):
-	player = body
-	chase = true 
+	if body.name == "Player":
+		get_tree().change_scene_to_file("res://skeleton_battle.tscn")
 
 
 
 func _on_agr_zone_body_shape_exited(body):
-	player = null
-	chase = false
+	if body.name == "Player":
+		get_tree().change_scene_to_file("res://game.tscn")

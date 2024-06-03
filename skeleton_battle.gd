@@ -3,7 +3,7 @@ extends Control
 signal textbox_closed
 func _ready():
 	$TextBox.hide()
-	$ActionPanel.hide()
+	$ActionPanel.hide()	
 	
 	display_text("Somebody wants ice cream !")
 	await textbox_closed
@@ -15,11 +15,9 @@ func _input(event):
 func display_text(text):
 	$TextBox.show()
 	$TextBox/Text.text = text
-	
-var new_pistion = Vector2(923,-965)
 
 func _on_run_button_pressed():
 	display_text("You understand that it is time to run.")
 	await textbox_closed
 	get_tree().change_scene_to_file("res://game.tscn")
-	$Player/Player.position = new_pistion
+	
