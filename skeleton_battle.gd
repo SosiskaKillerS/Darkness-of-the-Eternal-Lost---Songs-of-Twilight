@@ -5,7 +5,7 @@ func _ready():
 	$TextBox.hide()
 	$ActionPanel.hide()	
 	
-	display_text("Somebody wants ice cream !")
+	display_text("It was looked better from afar...")
 	await textbox_closed
 	$ActionPanel.show() 
 func _input(event):
