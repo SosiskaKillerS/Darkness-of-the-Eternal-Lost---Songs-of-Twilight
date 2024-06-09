@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://doblt33kecvyu"]
+[gd_scene load_steps=12 format=3 uid="uid://doblt33kecvyu"]
 
 [ext_resource type="FontFile" uid="uid://b3s02uj8pnwx4" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/UI - design/Jacquard12-Regular.ttf" id="1_3fn5f"]
+[ext_resource type="Script" path="res://skeleton_battle.gd" id="1_a6lbr"]
 [ext_resource type="Texture2D" uid="uid://rq7m6234ndyn" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/Charecters_sprites/Skeletons/skeleton_battle_sprite.png" id="1_w0gnh"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoxwv"]
@@ -38,6 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_a6lbr")
 
 [node name="background" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
@@ -244,7 +246,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_ag2jl")
 theme_override_styles/focus = SubResource("StyleBoxFlat_cj7ut")
 text = "Run"
 
-[node name="Panel" type="Panel" parent="."]
+[node name="TextBox" type="Panel" parent="."]
 custom_minimum_size = Vector2(1000, 200)
 layout_mode = 1
 anchors_preset = 8
@@ -252,15 +254,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = -100.0
-offset_right = 500.0
-offset_bottom = 100.0
+offset_left = -962.0
+offset_top = -49.0
+offset_right = 958.0
+offset_bottom = 151.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_oq4tt")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Text" type="Label" parent="TextBox"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -276,3 +278,22 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_3fn5f")
 theme_override_font_sizes/font_size = 101
 text = "It looked better from afar"
+
+[node name="NextButton" type="Label" parent="TextBox"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -87.0
+offset_right = -10.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_3fn5f")
+theme_override_font_sizes/font_size = 101
+text = ">"
+
+[connection signal="pressed" from="ActionPanel/HBoxContainer/RunButton" to="." method="_on_run_button_pressed"]

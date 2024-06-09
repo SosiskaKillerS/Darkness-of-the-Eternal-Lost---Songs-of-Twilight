@@ -4,6 +4,11 @@ extends CharacterBody2D
 
 @onready var animation_player = $AnimationPlayer #чтобы удобней писать 
 
+var current_health = 2
+var max_health = 2 
+var damage = 1 
+
+
 func get_input(): # Функция, чтобы получить направление
 	var input_direction = Input.get_vector("LEFT", "RIGHT", "UP", "DOWN")
 	velocity = input_direction * speed # скорость = скорость * направление движения 
