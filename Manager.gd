@@ -1,5 +1,5 @@
 extends Node
-@onready var pause_menu = $"../CanvasLayer/Pause Menu"
+@onready var pause_menu = $"../Pause/Pause Menu"
 var game_paused = false
 
 func _process(delta):

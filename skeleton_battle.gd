@@ -1,5 +1,6 @@
 extends Control
-
+@onready var battle = $"."
+@onready var player = $"../../Player/Player"
 signal textbox_closed
 func _ready():
 	$TextBox.hide()
@@ -19,5 +20,7 @@ func display_text(text):
 func _on_run_button_pressed():
 	display_text("You understand that it is time to run.")
 	await textbox_closed
-	get_tree().change_scene_to_file("res://game.tscn")
+	player.position = Vector2(924,-1225)
+	battle.hide()
+	
 	
