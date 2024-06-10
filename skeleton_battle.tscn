@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://doblt33kecvyu"]
+[gd_scene load_steps=17 format=3 uid="uid://doblt33kecvyu"]
 
 [ext_resource type="FontFile" uid="uid://b3s02uj8pnwx4" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/UI - design/Jacquard12-Regular.ttf" id="1_3fn5f"]
 [ext_resource type="Script" path="res://skeleton_battle.gd" id="1_a6lbr"]
 [ext_resource type="Texture2D" uid="uid://rq7m6234ndyn" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/Charecters_sprites/Skeletons/skeleton_battle_sprite.png" id="1_w0gnh"]
+[ext_resource type="Texture2D" uid="uid://nox58isenja2" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/UI - design/get_hit.png" id="4_pax2y"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hoxwv"]
 
@@ -31,6 +32,109 @@ border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
+
+[sub_resource type="Animation" id="Animation_y456p"]
+resource_name = "enemy_damage"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2tynd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../Player/Player/Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../hit_wave:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../hit_wave:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xc4gq"]
+resource_name = "get_hite"
+length = 0.4
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../hit_wave:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../hit_wave:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bv8fk"]
+_data = {
+"RESET": SubResource("Animation_2tynd"),
+"enemy_damage": SubResource("Animation_y456p"),
+"get_hite": SubResource("Animation_xc4gq")
+}
 
 [node name="SkeletonBattle" type="Control"]
 layout_mode = 3
@@ -296,4 +400,18 @@ theme_override_fonts/font = ExtResource("1_3fn5f")
 theme_override_font_sizes/font_size = 101
 text = ">"
 
+[node name="hit_wave" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(980, 480)
+scale = Vector2(10, 10)
+texture = ExtResource("4_pax2y")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../SkeletonContainer/Skeleton")
+libraries = {
+"": SubResource("AnimationLibrary_bv8fk")
+}
+
+[connection signal="pressed" from="ActionPanel/HBoxContainer/FightButton" to="." method="_on_fight_button_pressed"]
 [connection signal="pressed" from="ActionPanel/HBoxContainer/RunButton" to="." method="_on_run_button_pressed"]

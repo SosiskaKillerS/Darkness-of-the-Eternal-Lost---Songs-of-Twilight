@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://iuhqsyiwmckv"]
+[gd_scene load_steps=24 format=3 uid="uid://iuhqsyiwmckv"]
 
 [ext_resource type="Texture2D" uid="uid://c6tftursickj1" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/TileMap/ground.png" id="1_ne417"]
 [ext_resource type="Script" path="res://Manager.gd" id="2_en0by"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ldsyqpfiq7v5" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/TileMap/Graves_objects.png" id="7_peef4"]
 [ext_resource type="PackedScene" uid="uid://b11mnbs4bjx1p" path="res://skeleton.tscn" id="8_4itel"]
 [ext_resource type="PackedScene" uid="uid://doblt33kecvyu" path="res://skeleton_battle.tscn" id="9_t0d3i"]
+[ext_resource type="Resource" uid="uid://bqjoj02x4yx83" path="res://Skeleton.tres" id="10_8cp51"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_56gmd"]
 texture = ExtResource("1_ne417")
@@ -537,9 +538,11 @@ process_mode = 2
 
 [node name="SkeletonBattle" parent="Battle_with_skeleton" instance=ExtResource("9_t0d3i")]
 visible = false
+enemy = ExtResource("10_8cp51")
 
 [connection signal="pressed" from="Pause/Pause Menu/VBoxContainer/Resume" to="Manager" method="_on_resume_pressed"]
 [connection signal="pressed" from="Pause/Pause Menu/VBoxContainer/Exit" to="Manager" method="_on_exit_pressed"]
+[connection signal="pressed" from="Battle_with_skeleton/SkeletonBattle/ActionPanel/HBoxContainer/BlockButton" to="Battle_with_skeleton/SkeletonBattle" method="_on_block_button_pressed"]
 
 [editable path="Pause/Pause Menu"]
 [editable path="Battle_with_skeleton/SkeletonBattle"]
