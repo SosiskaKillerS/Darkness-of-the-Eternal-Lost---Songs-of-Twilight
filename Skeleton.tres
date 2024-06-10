@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bqjoj02x4yx83"]
+
+[ext_resource type="Script" path="res://BaseEnemy.gd" id="1_8phty"]
+[ext_resource type="Texture2D" uid="uid://rq7m6234ndyn" path="res://sprite_Darkness of the Eternal Lost - Songs of Twilight/Charecters_sprites/Skeletons/skeleton_battle_sprite.png" id="2_8mlh1"]
+
+[resource]
+script = ExtResource("1_8phty")
+name = "Skeleton"
+texture = ExtResource("2_8mlh1")
+health = 4
+damage = 1
