@@ -11,6 +11,7 @@ signal textbox_closed
 var current_player_health = 0
 var current_enemy_health = 0
 var is_defending = false 
+var skeleton_stamina = 0
 
 
 
@@ -40,30 +41,49 @@ func display_text(text):
 	$TextBox/Text.text = text
 	
 func enemy_turn():
-	display_text("The rumble of bones, the grace of a strike.")
-	await textbox_closed
-	display_text("in the dance of the RPG skeleton, every step is your last!")
-	await textbox_closed
-
-	current_player_health = max(0,current_player_health - enemy.damage)
-	set_health($PlayerPanel/PlayerData/ProgressBar, current_player_health, State.max_health)
-	
-	$hit_wave.show()
-	$AnimationPlayer.play("get_hite")
-	await $AnimationPlayer.animation_finished
-	$hit_wave.hide()
-	
-	display_text("Skeleton deal you 1 damage ... ")
-	await textbox_closed
+	$ActionPanel.hide()
+	if is_defending == true and skeleton_stamina!=2:
+		is_defending = false 
+		display_text("Successful parry!")
+		await textbox_closed
+		skeleton_stamina+=1
+	elif skeleton_stamina == 2:
+		is_defending = false 
+		display_text("No moves from skeleton ... ")
+		await textbox_closed
+		skeleton_stamina = 0
+	else:
+		skeleton_stamina+=1
+		display_text("The rumble of bones, the grace of a strike.")
+		await textbox_closed
+		display_text("in the dance of the RPG skeleton...")
+		await textbox_closed
+		display_text("every step is your last!")
+		await textbox_closed
+		current_player_health = max(0,current_player_health - enemy.damage)
+		set_health($PlayerPanel/PlayerData/ProgressBar, current_player_health, State.max_health)
+		$hit_wave.show()
+		$AnimationPlayer.play("get_hite")
+		await $AnimationPlayer.animation_finished
+		$hit_wave.hide()
+		display_text("Skeleton deal you 1 damage ... ")
+		await textbox_closed
+		
+	$ActionPanel.show()
 	
 	
 func _on_run_button_pressed():
+	$ActionPanel.hide()
 	display_text("You understand that it is time to run.")
 	await textbox_closed
 	player.position = Vector2(924,-1225)
 	battle.hide()
+	$ActionPanel.show()
+	set_health($SkeletonContainer/ProgressBar, enemy.health, enemy.health)
+	set_health($PlayerPanel/PlayerData/ProgressBar, State.health, State.max_health)
 	
 func _on_fight_button_pressed():
+	$ActionPanel.hide()
 	display_text("Bazz... hum,hum ... hum!.")
 	await textbox_closed
 	
@@ -80,9 +100,17 @@ func _on_fight_button_pressed():
 	else:
 		display_text("Incredable, you make %d damage!" % State.damage)
 		await textbox_closed
-	
+	$ActionPanel.show()
 	enemy_turn()
 
 
 func _on_block_button_pressed():
+	$ActionPanel.hide()
+	is_defending = true 
+	display_text("As Han Solo once said")
+	await textbox_closed
+	display_text("'Don't worry, I always have a plan'")
+	await textbox_closed
+	$ActionPanel.show()
+	enemy_turn()
 	
